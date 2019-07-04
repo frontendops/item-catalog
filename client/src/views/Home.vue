@@ -1,5 +1,8 @@
 <template>
-  <div class="home">{{ msg }}</div>
+  <div class="home">
+    {{ msg }}
+    <h2>I am from Vue</h2>
+  </div>
 </template>
 
 <script>
