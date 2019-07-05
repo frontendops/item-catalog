@@ -13,7 +13,7 @@ export default {
   name: "home",
   data() {
     return {
-      msg: ""
+      msg: null
     };
   },
   methods: {
@@ -22,7 +22,8 @@ export default {
       axios
         .get(path)
         .then(res => {
-          this.msg = res.data;
+          // this.msg = res.data;
+          console.log(res.data);
         })
         .catch(error => {
           // eslint-disable-next-line

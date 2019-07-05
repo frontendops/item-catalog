@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy import create_engine
 
-base = declarative_base
+Base = declarative_base()
 
 
 class Genre(Base):
@@ -42,4 +42,4 @@ class Item(Base):
 
 
 engine = create_engine('sqlite:///gamescatalog.db')
-base.metadata.create_all(engine)
+Base.metadata.create_all(engine)
