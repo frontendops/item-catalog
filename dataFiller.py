@@ -8,10 +8,23 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-actionGenre = Genre(name = 'Action')
-session.add(actionGenre)
+allGenres = [
+    'Adventure',
+    'Puzzle',
+    'Sports'
+    'Simulator',
+    'Multiplayer'
+]
+
+def createGenres():
+    for genre in allGenres:
+        session.add(Genre(name = genre))
+
+createGenres()
+
 session.commit()
 
-firstItem = session.query(Genre).first()
+games = session.query(Genre).all()
 
-print(firstItem.name)
+for game in games:
+    print game.name
