@@ -17,8 +17,8 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 
 @app.route("/", methods=['GET'])
 def home():
-    data = session.query(Genre).first()
-    return jsonify(data)
+    data = session.query(Genre).all()
+    return data
 
 
 if __name__ == "__main__":
